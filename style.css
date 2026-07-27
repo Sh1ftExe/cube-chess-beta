@@ -864,3 +864,197 @@ form small{grid-column:1/-1;color:var(--muted);font-size:10px}
     display: none;
   }
 }
+
+
+/* =========================
+   CUBE V3 — BRAND FIRST
+   ========================= */
+
+.brand-intro {
+  margin-top: 22px;
+}
+
+.brand-intro__logo,
+.brand-intro__banner,
+.brand-intro__content,
+.brand-intro__facts article {
+  border: 1px solid var(--line);
+  background: rgba(248, 243, 234, .82);
+  box-shadow: var(--shadow);
+}
+
+.brand-intro__logo {
+  min-height: 290px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 31px;
+  overflow: hidden;
+}
+
+.brand-intro__logo img {
+  width: min(720px, 92%);
+  max-height: 240px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.brand-intro__banner {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 27px;
+  overflow: hidden;
+}
+
+.brand-intro__banner img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 17px;
+  mix-blend-mode: multiply;
+}
+
+.brand-intro__content {
+  margin-top: 14px;
+  padding: 31px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border-radius: 24px;
+}
+
+.brand-intro__content h1 {
+  font-size: clamp(48px, 7vw, 88px);
+  letter-spacing: -.05em;
+}
+
+.brand-intro__subtitle {
+  margin: 8px 0 0;
+  color: var(--gold);
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(20px, 3vw, 31px);
+  line-height: 1.15;
+}
+
+.brand-intro__text {
+  max-width: 700px;
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
+.brand-intro__actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-intro__facts {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.brand-intro__facts article {
+  padding: 17px 19px;
+  border-radius: 17px;
+}
+
+.brand-intro__facts strong {
+  display: block;
+  color: var(--gold);
+  font-family: "Unbounded", sans-serif;
+  font-size: 17px;
+}
+
+.brand-intro__facts span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 920px) {
+  .brand-intro__content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-intro {
+    width: calc(100% - 16px);
+    margin-top: 10px;
+  }
+
+  .brand-intro__logo {
+    min-height: 0;
+    padding: 15px 12px;
+    border-radius: 20px;
+  }
+
+  .brand-intro__logo img {
+    width: 100%;
+    max-height: none;
+  }
+
+  .brand-intro__banner {
+    margin-top: 9px;
+    padding: 9px;
+    border-radius: 19px;
+  }
+
+  .brand-intro__banner img {
+    border-radius: 12px;
+  }
+
+  .brand-intro__content {
+    margin-top: 9px;
+    padding: 22px 17px;
+    border-radius: 20px;
+  }
+
+  .brand-intro__content h1 {
+    font-size: 42px;
+  }
+
+  .brand-intro__subtitle {
+    font-size: 22px;
+  }
+
+  .brand-intro__text {
+    font-size: 14px;
+    line-height: 1.48;
+  }
+
+  .brand-intro__actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .brand-intro__actions .button {
+    width: 100%;
+  }
+
+  .brand-intro__facts {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .brand-intro__facts article {
+    padding: 13px 15px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .brand-intro__facts strong {
+    font-size: 15px;
+  }
+
+  .brand-intro__facts span {
+    text-align: right;
+  }
+}
