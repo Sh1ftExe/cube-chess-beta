@@ -47,6 +47,36 @@
     });
   }
 
+
+  const telegramLink = document.getElementById("telegram-link");
+  const whatsappLink = document.getElementById("whatsapp-link");
+  const maxLink = document.getElementById("max-link");
+
+  function configureSocialLink(element, url, serviceName) {
+    if (!element) return;
+
+    if (url && url.trim()) {
+      element.href = url.trim();
+      return;
+    }
+
+    element.classList.add("is-unconfigured");
+    element.addEventListener("click", event => {
+      event.preventDefault();
+      alert(`Добавьте ссылку ${serviceName} в файл site-data.js через admin.html.`);
+    });
+  }
+
+  configureSocialLink(telegramLink, data?.socials?.telegram || "", "Telegram");
+  configureSocialLink(maxLink, data?.socials?.max || "", "MAX");
+
+  if (whatsappLink) {
+    const whatsappPhone = data?.club?.phoneRaw || "79279571999";
+    whatsappLink.href =
+      `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("Здравствуйте! Пишу с сайта шахматного клуба CUBE.")}`;
+  }
+
+
   const form = document.getElementById("signup-form");
   const toast = document.querySelector(".toast");
 

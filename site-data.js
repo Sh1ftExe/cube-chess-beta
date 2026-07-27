@@ -1,4 +1,9 @@
 window.CUBE_DATA = {
+  socials: {
+    telegram: "",
+    max: ""
+  },
+
   club: {
     title: "CUBE",
     subtitle: "Шахматный клуб в Уфе",

@@ -22,6 +22,10 @@ button{padding:13px 18px;border:0;border-radius:10px;font-weight:700;cursor:poin
 <p class="lead">Меняй данные и скачивай новый site-data.js.</p>
 <div class="note">После скачивания замени старый файл site-data.js в GitHub и нажми Commit changes.</div>
 <form id="editor">
+<section><h2>Социальные сети</h2><div class="grid">
+<label>Ссылка на Telegram<input name="telegram" placeholder="https://t.me/..."></label>
+<label>Ссылка на MAX<input name="max" placeholder="https://max.ru/..."></label>
+</div></section>
 <section><h2>Клуб</h2><div class="grid">
 <label>Главный текст<textarea name="heroText"></textarea></label>
 <label>Телефон для показа<input name="phoneDisplay"></label>
@@ -51,10 +55,10 @@ button{padding:13px 18px;border:0;border-radius:10px;font-weight:700;cursor:poin
 <script src="site-data.js"></script>
 <script>
 const d=window.CUBE_DATA,f=document.getElementById("editor"),t=d.tournaments[0];
-const map={heroText:d.club.heroText,phoneDisplay:d.club.phoneDisplay,phoneRaw:d.club.phoneRaw,address:d.club.address,landmark:d.club.landmark,tTitle:t.title,tDate:t.date,tDay:t.day,tMonth:t.month,tRegistration:t.registration,tFormat:t.format,tPrice:t.price,tDescription:t.description,coachName:d.coach.name,coachRole:d.coach.role,coachText:d.coach.text};
+const map={telegram:d.socials?.telegram||"",max:d.socials?.max||"",heroText:d.club.heroText,phoneDisplay:d.club.phoneDisplay,phoneRaw:d.club.phoneRaw,address:d.club.address,landmark:d.club.landmark,tTitle:t.title,tDate:t.date,tDay:t.day,tMonth:t.month,tRegistration:t.registration,tFormat:t.format,tPrice:t.price,tDescription:t.description,coachName:d.coach.name,coachRole:d.coach.role,coachText:d.coach.text};
 Object.entries(map).forEach(([k,v])=>f.elements[k].value=v);
 f.addEventListener("submit",e=>{e.preventDefault();const v=Object.fromEntries(new FormData(f).entries());const copy=structuredClone(d);
-copy.club.heroText=v.heroText;copy.club.phoneDisplay=v.phoneDisplay;copy.club.phoneRaw=v.phoneRaw.replace(/\D/g,"");copy.club.address=v.address;copy.club.landmark=v.landmark;
+copy.socials={telegram:v.telegram,max:v.max};copy.club.heroText=v.heroText;copy.club.phoneDisplay=v.phoneDisplay;copy.club.phoneRaw=v.phoneRaw.replace(/\D/g,"");copy.club.address=v.address;copy.club.landmark=v.landmark;
 Object.assign(copy.tournaments[0],{title:v.tTitle,date:v.tDate,day:v.tDay,month:v.tMonth,registration:v.tRegistration,format:v.tFormat,price:v.tPrice,description:v.tDescription});
 Object.assign(copy.coach,{name:v.coachName,role:v.coachRole,text:v.coachText});
 const blob=new Blob(["window.CUBE_DATA = "+JSON.stringify(copy,null,2)+";\n"],{type:"text/javascript"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="site-data.js";a.click();URL.revokeObjectURL(url)});
