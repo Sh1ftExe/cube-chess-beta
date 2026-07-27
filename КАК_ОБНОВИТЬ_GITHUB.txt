@@ -1,0 +1,25 @@
+CUBE CHESS — GITHUB FIXED
+
+Эта версия подготовлена под текущую структуру GitHub:
+
+cube-chess-beta/
+├── index.html
+├── admin.html
+├── style.css
+├── script.js
+├── site-data.js
+├── cube-banner.jpg
+└── cube-logo.jpg
+
+КАК ОБНОВИТЬ САЙТ
+1. Распакуйте архив.
+2. В GitHub откройте репозиторий cube-chess-beta.
+3. Нажмите Add file → Upload files.
+4. Перетащите все файлы из этой папки.
+5. Разрешите GitHub заменить существующие файлы.
+6. Нажмите Commit changes.
+7. Подождите 30–60 секунд.
+8. Обновите сайт сочетанием Ctrl + F5.
+
+Ссылка:
+https://sh1ftexe.github.io/cube-chess-beta/
