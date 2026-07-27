@@ -35,7 +35,7 @@
 
   <main id="top">
     <section class="hero shell">
-      <div class="hero__left reveal">
+      <div class="hero__left">
         <p class="eyebrow">Шахматный клуб · Уфа</p>
         <h1 id="hero-title">Шахматы для детей <span>от 4 лет</span></h1>
         <p id="hero-text" class="hero__text">Занятия в клубе, турнирная практика и бесплатное пробное занятие.</p>
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <div class="hero__right reveal">
+      <div class="hero__right">
         <div class="brand-stage">
           <div class="brand-stage__logo">
             <img src="cube-logo.jpg" alt="Логотип CUBE">
@@ -65,31 +65,96 @@
     </section>
 
     <section class="section shell" id="about">
-      <div class="section-head reveal">
+      <div class="section-head">
         <p class="eyebrow">Почему CUBE</p>
         <h2>Шахматы без лишней воды</h2>
       </div>
-      <div id="benefits-grid" class="benefits"></div>
+      <div id="benefits-grid" class="benefits">
+        <article class="benefit">
+          <span class="benefit__icon">♟</span>
+          <h3>Для начинающих</h3>
+          <p>Правила, фигуры и первая игровая практика.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit__icon">♜</span>
+          <h3>Турниры</h3>
+          <p>Регулярные соревнования и подготовка к ним.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit__icon">♛</span>
+          <h3>Опытный тренер</h3>
+          <p>Понятная подача и внимание к ученику.</p>
+        </article>
+        <article class="benefit">
+          <span class="benefit__icon">●</span>
+          <h3>Центр Уфы</h3>
+          <p>Удобное расположение клуба.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section shell" id="programs">
-      <div class="section-head reveal">
+      <div class="section-head">
         <p class="eyebrow">Занятия</p>
         <h2>Два направления</h2>
       </div>
-      <div id="programs-grid" class="programs"></div>
+      <div id="programs-grid" class="programs">
+        <article class="program">
+          <div class="program__top"><span>01</span><b>♙</b></div>
+          <h3>Первый ход</h3>
+          <p>Для детей, которые только знакомятся с шахматами.</p>
+          <ul>
+            <li>Правила и фигуры</li>
+            <li>Простые комбинации</li>
+            <li>Игровая практика</li>
+          </ul>
+          <a href="#signup">Записаться →</a>
+        </article>
+        <article class="program program--dark">
+          <div class="program__top"><span>02</span><b>♞</b></div>
+          <h3>Турнирная группа</h3>
+          <p>Для учеников, которые хотят играть сильнее.</p>
+          <ul>
+            <li>Тактика и стратегия</li>
+            <li>Разбор партий</li>
+            <li>Подготовка к турнирам</li>
+          </ul>
+          <a href="#signup">Записаться →</a>
+        </article>
+      </div>
     </section>
 
     <section class="section shell" id="tournaments">
-      <div class="section-head reveal">
+      <div class="section-head">
         <p class="eyebrow">Турниры</p>
         <h2>Ближайшие события</h2>
       </div>
-      <div id="tournaments-grid" class="tournaments"></div>
+      <div id="tournaments-grid" class="tournaments">
+        <article class="tournament">
+          <div>
+            <p class="eyebrow">Ближайший турнир</p>
+            <h2 id="tournament-title">Кубок CUBE</h2>
+            <p class="tournament__intro" id="tournament-description">Рейтинговый турнир в шахматном клубе CUBE.</p>
+            <div class="tournament__meta">
+              <div><span>Дата</span><strong id="tournament-date">19 сентября 2026</strong></div>
+              <div><span>Регистрация</span><strong id="tournament-registration">11:00</strong></div>
+              <div><span>Формат</span><strong id="tournament-format">7 туров · 10+5</strong></div>
+              <div><span>Взнос</span><strong id="tournament-price">700 ₽</strong></div>
+            </div>
+            <a class="button button--secondary phone-link" href="tel:+79279571999">Узнать подробности</a>
+          </div>
+          <div class="tournament__poster">
+            <small>CUBE CHESS</small>
+            <strong id="tournament-day">19</strong>
+            <span id="tournament-month">СЕНТЯБРЯ</span>
+            <b>♜</b>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="section shell" id="coach">
-      <article class="coach reveal">
+      <article class="coach">
         <div class="coach__visual"><span>♔</span></div>
         <div class="coach__content">
           <p class="eyebrow">Тренер</p>
@@ -102,23 +167,44 @@
     </section>
 
     <section class="section shell" id="gallery">
-      <div class="section-head reveal">
+      <div class="section-head">
         <p class="eyebrow">Галерея</p>
         <h2>Жизнь клуба</h2>
       </div>
-      <div id="gallery-grid" class="gallery"></div>
+      <div id="gallery-grid" class="gallery">
+        <article class="gallery-card"><b>♟</b><span>Занятия в клубе</span></article>
+        <article class="gallery-card"><b>♜</b><span>Турнирная практика</span></article>
+        <article class="gallery-card"><b>♛</b><span>Награждение</span></article>
+        <article class="gallery-card"><b>♞</b><span>Командная игра</span></article>
+      </div>
     </section>
 
     <section class="section shell" id="reviews">
-      <div class="section-head reveal">
+      <div class="section-head">
         <p class="eyebrow">Отзывы</p>
         <h2>Что говорят родители</h2>
       </div>
-      <div id="reviews-grid" class="reviews"></div>
+      <div id="reviews-grid" class="reviews">
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>Ребёнок с удовольствием ходит на занятия и стал внимательнее.</p>
+          <strong>Анна</strong>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>Понравился подход тренера и спокойная атмосфера в клубе.</p>
+          <strong>Ильдар</strong>
+        </article>
+        <article class="review">
+          <div class="review__stars">★★★★★</div>
+          <p>Хорошая практика и регулярные турниры для детей.</p>
+          <strong>Екатерина</strong>
+        </article>
+      </div>
     </section>
 
     <section class="section shell" id="signup">
-      <article class="signup reveal">
+      <article class="signup">
         <div>
           <p class="eyebrow">Пробное занятие</p>
           <h2>Первый урок — бесплатно</h2>
@@ -135,25 +221,25 @@
     </section>
 
     <section class="section shell" id="contacts">
-      <div class="section-head reveal">
+      <div class="section-head">
         <p class="eyebrow">Контакты</p>
         <h2>CUBE в Уфе</h2>
       </div>
 
       <div class="contacts">
-        <a class="contact phone-link reveal" href="#">
+        <a class="contact phone-link" href="#">
           <span>Телефон</span>
           <strong id="contact-phone">8 927 957-19-99</strong>
           <small>Позвонить →</small>
         </a>
 
-        <article class="contact reveal">
+        <article class="contact">
           <span>Адрес</span>
           <strong id="contact-address">г. Уфа, ул. Революционная, 78, к. 19</strong>
           <small id="contact-landmark">Остановка «Дом печати»</small>
         </article>
 
-        <a class="contact reveal" href="admin.html">
+        <a class="contact" href="admin.html">
           <span>Управление</span>
           <strong>Редактор сайта</strong>
           <small>Изменить турниры и контакты →</small>

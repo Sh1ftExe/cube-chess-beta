@@ -187,7 +187,7 @@ form small{grid-column:1/-1;color:var(--muted);font-size:10px}
   opacity:0;transform:translateY(18px);pointer-events:none;transition:.25s
 }
 .toast.show{opacity:1;transform:translateY(0)}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
+.reveal{opacity:1;transform:none}
 .reveal.visible{opacity:1;transform:none}
 @media(max-width:920px){
   .menu-btn{display:block}
