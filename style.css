@@ -378,3 +378,489 @@ form small{grid-column:1/-1;color:var(--muted);font-size:10px}
 .social-card p {
   margin-top: 5px;
 }
+
+
+/* =========================
+   CUBE V3 — MOBILE FIRST
+   ========================= */
+
+:root {
+  --mobile-gap: 12px;
+}
+
+.mobile-actions {
+  display: none;
+}
+
+/* Better tablet behavior */
+@media (max-width: 920px) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .header {
+    height: 68px;
+    padding: 0 13px;
+    border-radius: 18px;
+  }
+
+  .menu-btn {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(63, 88, 74, .07);
+  }
+
+  .menu-btn span {
+    width: 21px;
+    margin: 3px;
+    transition: transform .22s ease, opacity .22s ease;
+  }
+
+  .menu-btn.is-open span:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .menu-btn.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.is-open span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .nav {
+    top: 76px;
+    padding: 10px;
+    border-radius: 18px;
+    background: rgba(248, 243, 234, .98);
+    backdrop-filter: blur(18px);
+  }
+
+  .nav a {
+    padding: 13px 14px;
+    border-radius: 11px;
+  }
+
+  .nav a:hover {
+    background: rgba(63, 88, 74, .06);
+  }
+
+  .nav__cta {
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  .hero {
+    gap: 12px;
+  }
+
+  .hero__left {
+    min-height: 0;
+  }
+
+  .hero__right {
+    order: -1;
+  }
+
+  .brand-stage {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .brand-stage__logo,
+  .brand-stage__banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* True mobile layout */
+@media (max-width: 640px) {
+  body {
+    padding-bottom: 82px;
+  }
+
+  .shell,
+  .header {
+    width: calc(100% - 16px);
+  }
+
+  .header {
+    height: 62px;
+    margin-top: 8px;
+    top: 6px;
+    padding: 0 10px;
+    border-radius: 16px;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand__mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    font-size: 20px;
+  }
+
+  .brand strong {
+    font-size: 13px;
+  }
+
+  .menu-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+  }
+
+  .nav {
+    top: 68px;
+    left: 0;
+    right: 0;
+    gap: 2px;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+
+  .hero {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .hero__right {
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .brand-stage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .brand-stage__logo {
+    padding: 8px 12px;
+  }
+
+  .brand-stage__banner {
+    display: none;
+  }
+
+  .hero__left {
+    padding: 24px 17px;
+    border-radius: 20px;
+  }
+
+  .eyebrow {
+    margin-bottom: 10px;
+    font-size: 9px;
+    letter-spacing: .13em;
+  }
+
+  h1 {
+    font-size: clamp(31px, 10vw, 40px);
+    line-height: 1.03;
+  }
+
+  .hero__text {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.48;
+  }
+
+  .hero__actions {
+    display: none;
+  }
+
+  .hero__stats {
+    margin-top: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+
+  .hero__stats article {
+    padding: 11px 7px;
+    display: block;
+    text-align: center;
+    border-radius: 13px;
+  }
+
+  .hero__stats strong {
+    font-size: 14px;
+  }
+
+  .hero__stats span {
+    display: block;
+    margin-top: 4px;
+    font-size: 8px;
+    line-height: 1.25;
+  }
+
+  .section {
+    margin-top: 58px;
+  }
+
+  .section-head {
+    margin-bottom: 22px;
+  }
+
+  .section-head h2,
+  .coach h2,
+  .signup h2 {
+    font-size: 27px;
+    line-height: 1.08;
+  }
+
+  .benefits,
+  .programs,
+  .gallery,
+  .reviews,
+  .contacts,
+  .socials {
+    gap: 10px;
+  }
+
+  .benefit {
+    min-height: 0;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 13px;
+    align-items: center;
+    border-radius: 18px;
+  }
+
+  .benefit__icon {
+    grid-row: 1 / 3;
+    font-size: 31px;
+  }
+
+  .benefit h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+  }
+
+  .benefit p {
+    font-size: 12px;
+  }
+
+  .program {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .program__top b {
+    font-size: 39px;
+  }
+
+  .program h3 {
+    margin: 18px 0 8px;
+    font-size: 23px;
+  }
+
+  .program p,
+  .program li {
+    font-size: 12px;
+  }
+
+  .program ul {
+    margin: 18px 0;
+  }
+
+  .tournament {
+    padding: 20px;
+    gap: 20px;
+    border-radius: 21px;
+  }
+
+  .tournament__meta {
+    gap: 8px;
+    margin: 22px 0;
+  }
+
+  .tournament__meta div {
+    padding: 12px;
+  }
+
+  .tournament__poster {
+    min-height: 230px;
+    padding: 20px;
+  }
+
+  .tournament__poster strong {
+    font-size: 72px;
+  }
+
+  .tournament__poster span {
+    font-size: 18px;
+  }
+
+  .coach {
+    padding: 18px;
+    gap: 18px;
+    border-radius: 21px;
+  }
+
+  .coach__visual {
+    min-height: 210px;
+    border-radius: 18px;
+  }
+
+  .coach__visual span {
+    font-size: 108px;
+  }
+
+  .coach__content {
+    padding: 0;
+  }
+
+  .coach__content > a {
+    font-size: 16px;
+  }
+
+  .gallery-card {
+    min-height: 150px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .gallery-card b {
+    font-size: 50px;
+  }
+
+  .social-card {
+    min-height: 0;
+    padding: 17px;
+    grid-template-columns: 48px 1fr 18px;
+    gap: 13px;
+    border-radius: 18px;
+  }
+
+  .social-card__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .social-card__icon svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .social-card small {
+    font-size: 8px;
+  }
+
+  .social-card strong {
+    font-size: 15px;
+  }
+
+  .social-card p {
+    font-size: 10px;
+  }
+
+  .signup {
+    padding: 20px;
+    gap: 21px;
+    border-radius: 21px;
+  }
+
+  form {
+    gap: 10px;
+  }
+
+  input {
+    height: 48px;
+  }
+
+  .contact {
+    min-height: 125px;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .contact strong {
+    margin: 15px 0 5px;
+    font-size: 16px;
+  }
+
+  .footer {
+    margin-top: 58px;
+    padding-bottom: 20px;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+
+  .mobile-actions {
+    height: 66px;
+    padding: 8px;
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 8px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(248, 243, 234, .96);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 45px rgba(53, 39, 22, .16);
+  }
+
+  .mobile-actions a {
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .mobile-actions__call {
+    border: 1px solid var(--line);
+    background: #fffaf1;
+  }
+
+  .mobile-actions__signup {
+    color: white;
+    background: var(--green);
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 370px) {
+  h1 {
+    font-size: 29px;
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__stats article {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
+  }
+
+  .hero__stats span {
+    text-align: right;
+  }
+
+  .social-card {
+    grid-template-columns: 42px 1fr;
+  }
+
+  .social-card > b {
+    display: none;
+  }
+}

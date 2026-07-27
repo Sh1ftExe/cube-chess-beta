@@ -7,11 +7,16 @@
   if (menuButton && nav) {
     menuButton.addEventListener("click", () => {
       const open = nav.classList.toggle("open");
+      menuButton.classList.toggle("is-open", open);
       menuButton.setAttribute("aria-expanded", String(open));
     });
 
     document.querySelectorAll(".nav a").forEach(link => {
-      link.addEventListener("click", () => nav.classList.remove("open"));
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuButton.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
