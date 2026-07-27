@@ -1,0 +1,22 @@
+CUBE V2 — GITHUB FLAT VERSION
+
+В этой версии НЕТ папки assets.
+
+Все файлы лежат в одном месте:
+
+index.html
+style.css
+script.js
+site-data.js
+admin.html
+cube-logo.jpg
+cube-banner.jpg
+
+КАК ЗАГРУЗИТЬ:
+1. Распакуйте архив.
+2. В GitHub откройте cube-chess-beta.
+3. Add file → Upload files.
+4. Перетащите ВСЕ файлы из папки CUBE_V2_GITHUB_FLAT.
+5. Нажмите Commit changes.
+6. Подождите 1 минуту.
+7. Откройте сайт и нажмите Ctrl + F5.
