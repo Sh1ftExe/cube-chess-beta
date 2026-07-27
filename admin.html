@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CUBE — редактор данных</title>
+  <style>
+    :root { --ink:#27372f; --green:#3f574b; --gold:#b78443; --paper:#f4eee3; --card:#fffaf1; --line:rgba(39,55,47,.14); }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:24px; color:var(--ink); background:var(--paper); font-family:Arial,sans-serif; }
+    main { width:min(900px,100%); margin:auto; }
+    h1 { margin:0 0 8px; }
+    .lead { margin:0 0 24px; color:#6f7b74; }
+    section { margin-bottom:16px; padding:22px; border:1px solid var(--line); border-radius:18px; background:var(--card); }
+    h2 { margin-top:0; font-size:20px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    label { display:block; font-size:12px; font-weight:bold; }
+    input, textarea { width:100%; margin-top:6px; padding:12px; border:1px solid var(--line); border-radius:10px; font:inherit; background:white; }
+    textarea { min-height:85px; resize:vertical; }
+    .actions { position:sticky; bottom:12px; display:flex; gap:10px; padding:14px; border-radius:16px; background:rgba(39,55,47,.94); }
+    button { padding:13px 18px; border:0; border-radius:10px; font-weight:bold; cursor:pointer; }
+    .primary { color:white; background:var(--gold); }
+    .secondary { color:var(--ink); background:white; }
+    .note { padding:15px; border-radius:14px; color:#66522f; background:#f2dfbc; font-size:13px; }
+    @media(max-width:650px){ body{padding:12px}.grid{grid-template-columns:1fr}.actions{flex-direction:column}button{width:100%} }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Редактор сайта CUBE</h1>
+  <p class="lead">Измените поля и скачайте новый файл <b>site-data.js</b>.</p>
+
+  <div class="note">
+    Эта бесплатная панель не меняет сайт напрямую. После скачивания замените старый
+    файл <b>site-data.js</b> новым — локально или в GitHub.
+  </div>
+
+  <form id="editor">
+    <section>
+      <h2>Первый экран</h2>
+      <div class="grid">
+        <label>Основной текст<input name="heroText"></label>
+        <label>Возраст<input name="age"></label>
+        <label>Цена пробного занятия<input name="trialPrice"></label>
+        <label>Город<input name="city"></label>
+        <label>Короткий адрес<input name="shortAddress"></label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Турнир</h2>
+      <div class="grid">
+        <label>Название<input name="tournamentTitle"></label>
+        <label>Дата<input name="tournamentDate"></label>
+        <label>Начало регистрации<input name="tournamentTime"></label>
+        <label>Формат<input name="tournamentFormat"></label>
+        <label>Взнос<input name="tournamentPrice"></label>
+        <label>Число на афише<input name="posterDay"></label>
+        <label>Месяц на афише<input name="posterMonth"></label>
+        <label>Город на афише<input name="posterCity"></label>
+      </div>
+      <label>Описание<textarea name="tournamentDescription"></textarea></label>
+    </section>
+
+    <section>
+      <h2>Тренер</h2>
+      <div class="grid">
+        <label>Имя<input name="coachName"></label>
+        <label>Должность<input name="coachRole"></label>
+      </div>
+      <label>Короткое описание<textarea name="coachDescription"></textarea></label>
+    </section>
+
+    <section>
+      <h2>Контакты</h2>
+      <div class="grid">
+        <label>Телефон для показа<input name="phoneDisplay"></label>
+        <label>Телефон без + и пробелов<input name="phoneInternational"></label>
+        <label>Адрес<input name="address"></label>
+        <label>Ориентир<input name="landmark"></label>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button class="primary" type="submit">Скачать site-data.js</button>
+      <button class="secondary" type="button" id="preview">Открыть сайт</button>
+    </div>
+  </form>
+</main>
+
+<script src="site-data.js"></script>
+<script>
+const d = window.CUBE_SITE_DATA;
+const f = document.getElementById("editor");
+
+const values = {
+  heroText:d.hero.text, age:d.hero.age, trialPrice:d.hero.trialPrice,
+  city:d.hero.city, shortAddress:d.hero.shortAddress,
+  tournamentTitle:d.tournament.title, tournamentDescription:d.tournament.description,
+  tournamentDate:d.tournament.date, tournamentTime:d.tournament.registrationTime,
+  tournamentFormat:d.tournament.format, tournamentPrice:d.tournament.price,
+  posterDay:d.tournament.posterDay, posterMonth:d.tournament.posterMonth,
+  posterCity:d.tournament.posterCity, coachName:d.coach.name,
+  coachRole:d.coach.role, coachDescription:d.coach.description,
+  phoneDisplay:d.contacts.phoneDisplay,
+  phoneInternational:d.contacts.phoneInternational,
+  address:d.contacts.address, landmark:d.contacts.landmark
+};
+
+Object.entries(values).forEach(([key,value]) => {
+  if (f.elements[key]) f.elements[key].value = value;
+});
+
+f.addEventListener("submit", e => {
+  e.preventDefault();
+  const v = Object.fromEntries(new FormData(f).entries());
+  const updated = {
+    hero:{
+      titleBefore:d.hero.titleBefore,
+      titleAccent:d.hero.titleAccent,
+      text:v.heroText, age:v.age, trialPrice:v.trialPrice,
+      city:v.city, shortAddress:v.shortAddress
+    },
+    tournament:{
+      title:v.tournamentTitle, description:v.tournamentDescription,
+      date:v.tournamentDate, registrationTime:v.tournamentTime,
+      format:v.tournamentFormat, price:v.tournamentPrice,
+      posterDay:v.posterDay, posterMonth:v.posterMonth, posterCity:v.posterCity
+    },
+    coach:{name:v.coachName, role:v.coachRole, description:v.coachDescription},
+    contacts:{
+      phoneDisplay:v.phoneDisplay,
+      phoneInternational:v.phoneInternational.replace(/\D/g,""),
+      address:v.address, landmark:v.landmark
+    }
+  };
+
+  const content = "window.CUBE_SITE_DATA = " + JSON.stringify(updated, null, 2) + ";\n";
+  const blob = new Blob([content], {type:"text/javascript;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "site-data.js";
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById("preview").addEventListener("click", () => {
+  window.open("index.html", "_blank");
+});
+</script>
+</body>
+</html>
